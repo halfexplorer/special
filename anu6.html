@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Someone Special ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: #ffe5ec;
+            transition: background 0.8s ease;
+        }
+
+        /* Creative Background Waves */
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            z-index: 1;
+            animation: floatBg 10s infinite alternate ease-in-out;
+        }
+        .bg-1 { width: 300px; height: 300px; top: -10%; left: -10%; }
+        .bg-2 { width: 400px; height: 400px; bottom: -20%; right: -10%; animation-delay: 2s; }
+
+        @keyframes floatBg {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(30px, 50px) rotate(45deg); }
+        }
+
+        /* Multi-Page Container */
+        .page {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(225, 74, 112, 0.2);
+            backdrop-filter: blur(15px);
+            max-width: 90%;
+            width: 450px;
+            z-index: 10;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            position: absolute;
+            display: none; 
+            opacity: 0;
+            transform: scale(0.9) translateY(30px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .page.active {
+            display: block;
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        /* Emoji Box Style */
+        .emoji-box {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff477e;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        p {
+            color: #4a4a4a;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff477e, #ff7096);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(255, 71, 126, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 20px rgba(255, 71, 126, 0.5);
+        }
+
+        /* Floating Elements */
+        .heart {
+            position: absolute;
+            font-size: 25px;
+            animation: floatUp 4s linear infinite;
+            opacity: 0;
+            bottom: -10%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(0); opacity: 1; }
+            100% { transform: translateY(-110vh) scale(1.3); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-circle bg-1"></div>
+    <div class="bg-circle bg-2"></div>
+
+    <!-- BACKGROUND MUSIC (YouTube Embed Link for 'Kyun' Song) -->
+    <iframe id="bgMusic" width="0" height="0" src="https://www.youtube.com/embed/g8Z6mPZscR0?enablejsapi=1" frameborder="0" allow="autoplay" style="display:none;"></iframe>
+
+    <!-- ================= PAGE 1 ================= -->
+    <div class="page active" id="page1">
+        <div class="emoji-box">🥺🙏</div>
+        <h1>Hey... </h1>
+        <p>Mujhe pata hai tum mujhse naraz ho, aur galti meri hi thi. Par please meri baat toh suno...</p>
+        <button class="btn" onclick="startEverything()">Listen to me 🥺</button>
+    </div>
+
+    <!-- ================= PAGE 2 ================= -->
+    <div class="page" id="page2">
+        <div class="emoji-box">🥺🙏</div>
+        <h1>Gussa Kyun Ho? I know... 💔</h1>
+        <p>Tumhi mujhse rooth gaye toh main kisse baat karunga? Tumhara gussa hona sahi hai, par tumhari ye khamoshi bardaasht nahi hoti.</p>
+        <button class="btn" onclick="nextPage(2)">Next Page 👉</button>
+    </div>
+
+    <!-- ================= PAGE 3 ================= -->
+    <div class="page" id="page3">
+        <div class="emoji-box">✨💻✨</div>
+        <h1>JUST FOR YOU✨</h1>
+        <p>Dekho i accept m glti kia but ek bss ek baar maaf krso baate bnd mt kro plz tum kaho toh maar lga lo gaaliya dedo bss ese baat n krne ki saja mt do yrrr m tumhare lie ky hu i dont know but yrr tum mere sb kuch ho bhot kuch ho plz maaf krdo </p>
+        <button class="btn" onclick="nextPage(3)">Thoda aur aage chalo...</button>
+    </div>
+
+    <!-- ================= PAGE 4 ================= -->
+    <div class="page" id="page4">
+        <div class="emoji-box">🥺❤️</div>
+        <h1>Ek Last Chance? 🙏</h1>
+        <p>Agar tum iske aage wale page par jaogi, toh iska matlab hoga ki tumne mujhe officially maaf kar diya hai. Kr dp n yrrrrrrr... So, ready?</p>
+        <button class="btn" onclick="nextPage(4)">Click to Forgive ❤️</button>
+    </div>
+
+    <!-- ================= PAGE 5 ================= -->
+    <div class="page" id="page5">
+        <div class="emoji-box">🎉🥳🎉</div>
+        <h1>Yayyy! Thank You! 🎉</h1>
+        <p>Mujhe pata hai tumhara dil bohot bada hai!M yakeen dilata hu aage se kbhi esa nhi krunga kbhi bhi..... Ab hamesha aise hi khush rehna aur gussa mat hona. ✨💖</p>
+        <button class="btn" onclick="celebrate()">Celebration! 🥳</button>
+    </div>
+
+    <script>
+        const bgColors = ["#ffe5ec", "#fbc4b6", "#e8dbfc", "#d6f0ff", "#ffccd5"];
+
+        function startEverything() {
+            const iframe = document.getElementById('bgMusic');
+            iframe.src += "&autoplay=1";
+            nextPage(1);
+        }
+
+        function nextPage(currentPageNum) {
+            for(let i=0; i<15; i++) { setTimeout(createHeart, i * 80); }
+
+            const currentSubPage = document.getElementById(`page${currentPageNum}`);
+            currentSubPage.classList.remove('active');
+
+            setTimeout(() => {
+                const nextPageNum = currentPageNum + 1;
+                const nextSubPage = document.getElementById(`page${nextPageNum}`);
+                if(nextSubPage) {
+                    nextSubPage.classList.add('active');
+                    document.body.style.background = bgColors[currentPageNum];
+                }
+            }, 300);
+        }
+
+        function celebrate() {
+            setInterval(createHeart, 100);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            const items = ['❤️', '💖', '✨', '🌸', '🌹'];
+            heart.innerHTML = items[Math.floor(Math.random() * items.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 4000);
+        }
+    </script>
+</body>
+</html>
